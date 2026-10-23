@@ -6,7 +6,7 @@ export function Lineup({
     homeBatters, homePitcher, 
     awayCurrentBatOrder, homeCurrentBatOrder,
     color1, color2, textColor,
-    awayUsed, homeUsed }: { 
+    awayUsed, homeUsed, showUsed}: { 
         away: string; home: string; 
         awayBatters: Batter[]; awayPitcher: Pitcher; 
         homeBatters: Batter[]; homePitcher: Pitcher; 
@@ -14,6 +14,7 @@ export function Lineup({
         color1: string; color2: string; textColor: string; 
         awayUsed: number; 
         homeUsed: number; 
+        showUsed: boolean;
     }) {
 
     awayBatters.sort((a, b) => a.batorder - b.batorder)
@@ -42,7 +43,7 @@ export function Lineup({
                     <tr>
                         <td></td>
                         <td>{awayPitcher.name}</td>
-                        <td>P: {awayUsed}</td>
+                        <td>{showUsed ? `P: ${awayUsed}` : "P"}</td>
                     </tr>
                 </tbody>
             </table>
@@ -67,7 +68,7 @@ export function Lineup({
                     <tr>
                         <td></td>
                         <td>{homePitcher.name}</td>
-                        <td>P: {homeUsed}</td>
+                        <td>{showUsed ? `P: ${homeUsed}` : "P"}</td>
                     </tr>
                 </tbody>
             </table>

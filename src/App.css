@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "GenSen";
+  src: url("./fonts/GenSenRounded2TW-R.otf") format("opentype");
+  /* https://github.com/ButTaiwan/gensen-font#%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87 */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 #root {
     width: 100%;
     margin: 0;
@@ -16,7 +26,8 @@
 
 #left-panel {
   color: white;
-  padding: 40px
+  padding: 40px;
+  font-family: "GenSen", sans-serif;
 }
 
 .panels {

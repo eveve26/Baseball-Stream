@@ -18,6 +18,7 @@ import { ControlColor } from './controling/colors'
 import { ControlCurrentBatter } from './controling/currentBatter'
 import { ControlUsed } from './controling/used'
 import { ControlImage1 } from './controling/image1'
+import { ShowUsed } from './controling/showUsed'
 
 function App() {
   const [away, setAway] = useState(() => {
@@ -142,6 +143,10 @@ function App() {
   const [homeUsed, setHomeUsed] = useState(() => {
     const saved = localStorage.getItem('homeUsed')
     return saved ? JSON.parse(saved) : 0
+  })
+  const [showUsed, setShowUsed] = useState(() => {
+    const saved = localStorage.getItem('showUsed')
+    return saved ? JSON.parse(saved) : true
   })
   const [image1, setImage1] = useState(() => {
     const saved = localStorage.getItem('image1')
@@ -270,6 +275,7 @@ function App() {
               textColor={textColor}
               awayUsed={awayUsed}
               homeUsed={homeUsed}
+              showUsed={showUsed}
             />
           </div>
           <div className="grid-item-1-2">
@@ -400,6 +406,7 @@ function App() {
           setAway={setAway}
           setHome={setHome}
         />
+        <ShowUsed showUsed={showUsed} setShowUsed={setShowUsed}/>
         <ControlColor
           color1={color1}
           color2={color2}
