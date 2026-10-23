@@ -1,7 +1,7 @@
 import { FullCircle, EmptyCircle } from '../displayed/circle'
 import './BSOboard.css'
 
-export function BSOboard({ BSO, color1, color2, topOrBottom }: { BSO: { B: number, S: number, O: number }, color1: string, color2: string, topOrBottom: string }) {
+export function BSOboard({ BSO }: { BSO: { B: number, S: number, O: number } }) {
 
     // const color = topOrBottom === "top" ? color1 : color2;
     return (

@@ -255,7 +255,7 @@ function App() {
           </div>
           <div></div><div></div><div></div><div></div>
           <div>
-            <BSOboard BSO={BSO} color1={color1} color2={color2} topOrBottom={topOrBottom} />
+            <BSOboard BSO={BSO} />
           </div>
 
           <div></div><div></div>

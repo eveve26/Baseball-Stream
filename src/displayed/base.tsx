@@ -5,11 +5,11 @@ export function Base({ first, second, third, color1, color2, topOrBottom }: { fi
     return (
         <div className="base-container">
             <div className="base-first-row">
-                <Diamond loaded={second} base="2" color={color} />
+                <Diamond loaded={second} color={color} />
             </div>
             <div className="base-second-row">
-                <Diamond loaded={third} base="3" color={color} />
-                <Diamond loaded={first} base="1" color={color} />     
+                <Diamond loaded={third} color={color} />
+                <Diamond loaded={first} color={color} />     
             </div>
 
 
@@ -18,7 +18,7 @@ export function Base({ first, second, third, color1, color2, topOrBottom }: { fi
     )
 }
 
-function Diamond({ loaded, base, color }: {loaded: boolean; base: string; color: string}) {
+function Diamond({ loaded, color }: {loaded: boolean; color: string}) {
     const c = loaded ? color : "white";
     return (
         <div className="diamond" style={{ backgroundColor: c }}>
