@@ -10,11 +10,11 @@ export function ControlColor ({ color1, color2, setColor1, setColor2 }: ControlC
     return (
         <div className="control-row">
             <div>
-                <label>Color 1:</label>
+                <label>客隊顏色:</label>
                 <input type="color" value={color1} onChange={(e) => setColor1(e.target.value)} className="control-input"/>
             </div>
             <div>
-                <label>Color 2:</label>
+                <label>主隊顏色:</label>
                 <input type="color" value={color2} onChange={(e) => setColor2(e.target.value)} className="control-input"/>
             </div>
         </div>
