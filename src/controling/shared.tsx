@@ -1,0 +1,1 @@
+export const space = <div style={{ width: '10px' }}></div>

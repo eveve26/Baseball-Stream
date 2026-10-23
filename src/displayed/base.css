@@ -1,0 +1,35 @@
+.diamond {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 45deg;
+    border: 1px solid black;
+}
+
+.base_number {
+    rotate: -45deg;
+}
+
+.base-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.base-first-row,
+.base-third-row {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.base-second-row {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}

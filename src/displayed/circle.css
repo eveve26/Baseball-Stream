@@ -1,0 +1,17 @@
+.full-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.empty-circle {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    margin-right: 10px;
+}

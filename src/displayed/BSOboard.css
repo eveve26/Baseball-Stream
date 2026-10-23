@@ -1,0 +1,19 @@
+.bso-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start
+}
+.bso-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.bso-label {
+    width: 20px;
+    flex-shrink: 0;
+}
+.bso-circles {
+    display: flex;
+    gap: 6px;
+}

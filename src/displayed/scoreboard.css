@@ -1,0 +1,18 @@
+.board-container {
+  font-size: 30px;
+  min-width: 0;
+  align-self: start;
+}
+
+.scoreboard-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.scoreboard-table th,
+.scoreboard-table td {
+  border: 1px solid;
+  padding: 8px;
+  text-align: center;
+  white-space: nowrap;
+}

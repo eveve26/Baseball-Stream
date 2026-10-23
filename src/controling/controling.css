@@ -1,0 +1,67 @@
+.control-row-container {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.control-row {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.control-row-batorder {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.control-button {
+    font-size: 30px;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.control-checkbox {
+    min-height: 40px;
+    min-width: 40px;
+}
+
+.base-control {
+    display: flex;
+    align-items: center;
+}
+
+.batter-row {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.control-input {
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 30px;
+    width: 90px;
+}
+
+.control-path-input {
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 30px;
+    width: auto;
+}
+
+.control-select {
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 30px;
+    width: 120px;
+}
+
+.control-heading {
+    font-size: 30px;
+    text-align: left;
+}
