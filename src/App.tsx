@@ -210,7 +210,7 @@ function App() {
     <div className="panels">
       <div className="panel" id="left-panel">
 
-          <img src={image1} className="image1"/>
+          {/* <img src={image1} className="image1" alt=""/> */}
 
         <div className="grid-container-1">
           <div className="grid-item-1-1">
@@ -361,7 +361,7 @@ function App() {
           setColor2={setColor2}
         />
 
-        <ControlImage1 image1={image1} setImage1={setImage1} />
+        <ControlImage1 image1={image1} setImage1={setImage1}/>
 
         <Reset />
 
