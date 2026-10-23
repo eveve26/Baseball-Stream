@@ -5,13 +5,13 @@ export function Lineup({
     awayBatters, awayPitcher, 
     homeBatters, homePitcher, 
     awayCurrentBatOrder, homeCurrentBatOrder,
-    color1, color2, 
+    color1, color2, textColor,
     awayUsed, homeUsed }: { 
         away: string; home: string; 
         awayBatters: Batter[]; awayPitcher: Pitcher; 
         homeBatters: Batter[]; homePitcher: Pitcher; 
         awayCurrentBatOrder: number; homeCurrentBatOrder: number; 
-        color1: string; color2: string;
+        color1: string; color2: string; textColor: string; 
         awayUsed: number; 
         homeUsed: number; 
     }) {
@@ -21,19 +21,19 @@ export function Lineup({
 
     return (
         <div className="lineup-table-container">
-            <table className="lineup-table">
+            <table className="lineup-table" style={{ border: `1px solid ${textColor}`, borderBottom: `1px solid ${textColor}` }}>
                 <thead>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr style={{ borderBottom: `1px solid ${textColor}` }}>
                         <td colSpan={3}>{away}</td>
                     </tr>
 
                     {awayBatters.map((player, index) => {
                         
                         return (
-                            <tr key={index} style={awayCurrentBatOrder === player.batorder ? { backgroundColor: color1 } : {}}>
-                                <td>{player.batorder}</td>
+                            <tr key={index} style={ awayCurrentBatOrder === player.batorder ? { backgroundColor: color1, borderBottom: `1px solid ${textColor}`  } : { borderBottom: `1px solid ${textColor}` } } className="lineup-row">
+                                <td >{player.batorder}</td>
                                 <td>{player.name}</td>
                                 <td>{player.position}</td>
                             </tr>
@@ -46,18 +46,18 @@ export function Lineup({
                     </tr>
                 </tbody>
             </table>
-            <table className="lineup-table">
+            <table className="lineup-table" style={{ border: `1px solid ${textColor}`, borderBottom: `1px solid ${textColor}` }}>
                 <thead>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colSpan={3}>{home}</td>
+                        <td colSpan={3} style={{ borderBottom: `1px solid ${textColor}` }}>{home}</td>
                     </tr>
 
                     {homeBatters.map((player, index) => {
                         
                         return (
-                            <tr key={index} style={homeCurrentBatOrder === player.batorder ? { backgroundColor: color2 } : {}}>
+                            <tr key={index} style={homeCurrentBatOrder === player.batorder ? { backgroundColor: color2, borderBottom: `1px solid ${textColor}` } : { borderBottom: `1px solid ${textColor}` }} className="lineup-row">
                                 <td>{player.batorder}</td>
                                 <td>{player.name}</td>
                                 <td>{player.position}</td>

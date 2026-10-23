@@ -111,6 +111,30 @@ function App() {
     const saved = localStorage.getItem('color2')
     return saved ? JSON.parse(saved) : "orange"
   })
+  const [bgcolor, setBgcolor] = useState(() => {
+    const saved = localStorage.getItem('bgcolor')
+    return saved ? JSON.parse(saved) : "rgb(51, 41, 37)"
+  })
+  const [baseBorderColor, setBaseBorderColor] = useState(() => {
+    const saved = localStorage.getItem('baseBorderColor')
+    return saved ? JSON.parse(saved) : "white"
+  })
+  const [textColor, setTextColor] = useState(() => {
+    const saved = localStorage.getItem('textColor')
+    return saved ? JSON.parse(saved) : "white"
+  })
+  const [bigScoreColor, setBigScoreColor] = useState(() => {
+    const saved = localStorage.getItem('bigScoreColor')
+    return saved ? JSON.parse(saved) : "white"
+  })
+  const [scoreBoardColor, setScoreBoardColor] = useState(() => {
+    const saved = localStorage.getItem('scoreBoardColor')
+    return saved ? JSON.parse(saved) : "white"
+  })
+  const [BSOBorderColor, setBSOBorderColor] = useState(() => {
+    const saved = localStorage.getItem('BSOBorderColor')
+    return saved ? JSON.parse(saved) : "white"
+  })
   const [awayUsed, setAwayUsed] = useState(() => {
     const saved = localStorage.getItem('awayUsed')
     return saved ? JSON.parse(saved) : 0
@@ -194,6 +218,24 @@ function App() {
     localStorage.setItem('color2', JSON.stringify(color2))
   }, [color2])
   useEffect(() => {
+    localStorage.setItem('bgcolor', JSON.stringify(bgcolor))
+  }, [bgcolor])
+  useEffect(() => {
+    localStorage.setItem('textColor', JSON.stringify(textColor))
+  }, [textColor])
+  useEffect(() => {
+    localStorage.setItem('bigScoreColor', JSON.stringify(bigScoreColor))
+  }, [bigScoreColor])
+  useEffect(() => {
+    localStorage.setItem('BSOBorderColor', JSON.stringify(BSOBorderColor))
+  }, [BSOBorderColor])
+  useEffect(() => {
+    localStorage.setItem('scoreBoardColor', JSON.stringify(scoreBoardColor))
+  }, [scoreBoardColor])
+  useEffect(() => {
+    localStorage.setItem('baseBorderColor', JSON.stringify(baseBorderColor))
+  }, [baseBorderColor])
+  useEffect(() => {
     localStorage.setItem('awayUsed', JSON.stringify(awayUsed))
   }, [awayUsed])
   useEffect(() => {
@@ -208,7 +250,7 @@ function App() {
 
 
     <div className="panels">
-      <div className="panel" id="left-panel">
+      <div className="panel" id="left-panel" style={{ backgroundColor: bgcolor, color: textColor }}>
 
           {/* <img src={image1} className="image1" alt=""/> */}
 
@@ -225,6 +267,7 @@ function App() {
               homeCurrentBatOrder={homeCurrentBatOrder}
               color1={color1}
               color2={color2}
+              textColor={textColor}
               awayUsed={awayUsed}
               homeUsed={homeUsed}
             />
@@ -237,6 +280,7 @@ function App() {
               homeRuns={homeRuns}
               currentInning={currentInning}
               topOrBottom={topOrBottom}
+              bigScoreColor={bigScoreColor}
             />
           </div>
           
@@ -251,11 +295,12 @@ function App() {
               color1={color1}
               color2={color2}
               topOrBottom={topOrBottom}
+              baseBorderColor={baseBorderColor}
             />
           </div>
           <div></div><div></div><div></div><div></div>
           <div>
-            <BSOboard BSO={BSO} />
+            <BSOboard BSO={BSO} BSOBorderColor={BSOBorderColor} />
           </div>
 
           <div></div><div></div>
@@ -278,6 +323,7 @@ function App() {
               topOrBottom={topOrBottom}
               color1={color1}
               color2={color2}
+              scoreBoardColor={scoreBoardColor}
             />    
           </div>
         </div>
@@ -357,8 +403,20 @@ function App() {
         <ControlColor
           color1={color1}
           color2={color2}
+          bgcolor={bgcolor}
+          textColor={textColor}
           setColor1={setColor1}
           setColor2={setColor2}
+          setBgcolor={setBgcolor}
+          setTextColor={setTextColor}
+          baseBorderColor={baseBorderColor}
+          setBaseBorderColor={setBaseBorderColor}
+          bigScoreColor={bigScoreColor}
+          setBigScoreColor={setBigScoreColor}
+          BSOBorderColor={BSOBorderColor}
+          setBSOBorderColor={setBSOBorderColor}
+          scoreBoardColor={scoreBoardColor}
+          setScoreBoardColor={setScoreBoardColor}
         />
 
         <ControlImage1 image1={image1} setImage1={setImage1}/>

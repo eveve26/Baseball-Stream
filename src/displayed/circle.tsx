@@ -6,8 +6,8 @@ export function FullCircle({ color }: { color: string }) {
     )
 }
 
-export function EmptyCircle() {
+export function EmptyCircle({ BSOBorderColor }: { BSOBorderColor: string }) {
     return (
-        <div className="empty-circle"></div>
+        <div className="empty-circle" style={{ border: `2px solid ${BSOBorderColor}` }}></div>
     )
 }

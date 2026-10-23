@@ -16,6 +16,7 @@ export function Scoreboard(
         topOrBottom,
         color1,
         color2,
+        scoreBoardColor
     }: { away: string; 
         home: string, 
         awayHits: number; 
@@ -30,6 +31,7 @@ export function Scoreboard(
         topOrBottom: string,
         color1: string,
         color2: string,
+        scoreBoardColor: string,
         }) {
 
     const inningHeaders = Array.from({ length: innings }).map((_, index) => (
@@ -39,7 +41,7 @@ export function Scoreboard(
 
     return (
         <div  className="board-container">
-            <table className="scoreboard-table">
+            <table className="scoreboard-table" style={{ color: scoreBoardColor }}>
                 <thead>
                     <tr>
                         <th></th>
