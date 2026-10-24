@@ -279,6 +279,7 @@ function App() {
               showUsed={showUsed}
             />
           </div>
+          <div></div>
           <div className="grid-item-1-2">
             <BigScore
               away={away}
@@ -291,7 +292,7 @@ function App() {
             />
           </div>
           
-          <div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
           
 
           <div className="grid-item-1-3">
@@ -305,7 +306,7 @@ function App() {
               baseBorderColor={baseBorderColor}
             />
           </div>
-          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div>
           <div>
             <BSOboard BSO={BSO} BSOBorderColor={BSOBorderColor} />
           </div>
