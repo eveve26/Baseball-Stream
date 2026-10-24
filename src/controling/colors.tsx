@@ -1,5 +1,7 @@
 import './controling.css'
 type ControlColorProps = {
+    timecolor: string;
+    setTimecolor: (color: string) => void;
     color1: string;
     color2: string;
     bgcolor: string;
@@ -21,7 +23,9 @@ type ControlColorProps = {
 export function ControlColor ({ 
     color1, color2, bgcolor, textColor, setColor1, setColor2, setBgcolor, setTextColor, 
     baseBorderColor, setBaseBorderColor, 
-    bigScoreColor, setBigScoreColor, BSOBorderColor, setBSOBorderColor, scoreBoardColor, setScoreBoardColor }: ControlColorProps) {
+    bigScoreColor, setBigScoreColor, BSOBorderColor, setBSOBorderColor, scoreBoardColor, setScoreBoardColor,
+    timecolor, setTimecolor
+}: ControlColorProps) {
     return (
         <>
         <div className="control-row">
@@ -59,6 +63,12 @@ export function ControlColor ({
             <div>
                 <label>板板顏色:</label>
                 <input type="color" value={scoreBoardColor} onChange={(e) => setScoreBoardColor(e.target.value)} className="control-input"/>
+            </div>
+        </div>
+        <div className="control-row">
+            <div>
+                <label>時間顏色:</label>
+                <input type="color" value={timecolor} onChange={(e) => setTimecolor(e.target.value)} className="control-input"/>
             </div>
         </div>
         </>
