@@ -53,15 +53,17 @@ export function ControlScoreBoard(
         inningScores, setInningScores,
         currentInning, setCurrentInning,
         topOrBottom, setTopOrBottom,
-        away, home
-    }: ChangeAwayHits & ChangeHomeHits & ChangeInnings & ChangeAwayErrors & ChangeHomeErrors & ChangeInningScores & ChangeCurrentInning & ChangeTopOrBottom & { away: string; home: string }) {
-    return (
+        away, home,
+        hintcolor
+    }: ChangeAwayHits & ChangeHomeHits & ChangeInnings & ChangeAwayErrors & ChangeHomeErrors & ChangeInningScores & ChangeCurrentInning & ChangeTopOrBottom & { away: string; home: string; hintcolor: string }) {
+    
+        return (
         <div className="control-container">
-            <div className="control-row-container">{away}
+            <div className="control-row-container" style = {topOrBottom === 'top' ? { backgroundColor: hintcolor } : {}}>{away}
                 <ChangeAwayHits awayHits={awayHits} setAwayHits={setAwayHits} />
                 <ChangeAwayErrors awayErrors={awayErrors} setAwayErrors={setAwayErrors} />
             </div>    
-            <div className="control-row-container">{home}
+            <div className="control-row-container" style = {topOrBottom === 'bottom' ? { backgroundColor: hintcolor } : {}}>{home}
                 <ChangeHomeHits homeHits={homeHits} setHomeHits={setHomeHits} />
                 <ChangeHomeErrors homeErrors={homeErrors} setHomeErrors={setHomeErrors} />
             </div> 

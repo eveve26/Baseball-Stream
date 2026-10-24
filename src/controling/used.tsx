@@ -1,10 +1,10 @@
 import './controling.css'
 
-export function ControlUsed({ used, setUsed, topOrBottom }: { used: number; setUsed: React.Dispatch<React.SetStateAction<number>>; topOrBottom: 'top' | 'bottom' }) {
-    const label = topOrBottom === 'top' ? '客隊用球數' : '主隊用球數';
-
+export function ControlUsed({ used, setUsed, tob, topOrBottom, hintcolor }: { used: number; setUsed: React.Dispatch<React.SetStateAction<number>>; tob: 'top' | 'bottom'; topOrBottom?: 'top' | 'bottom'; hintcolor: string; }) {
+    const label = tob === 'top' ? '客隊用球數' : '主隊用球數';
+    
     return (
-        <div className="control-row">
+        <div className="control-row" style={ topOrBottom === tob ? {} : { backgroundColor: hintcolor }}>
             <label>{label}</label>
             <button onClick={() => setUsed(Math.max(used - 1, 0))} className="control-button">
                 -

@@ -106,11 +106,11 @@ function App() {
   })
   const [color1, setColor1] = useState(() => {
     const saved = localStorage.getItem('color1')
-    return saved ? JSON.parse(saved) : "pink"
+    return saved ? JSON.parse(saved) : "rgb(255, 192, 203)"
   })
   const [color2, setColor2] = useState(() => {
     const saved = localStorage.getItem('color2')
-    return saved ? JSON.parse(saved) : "orange"
+    return saved ? JSON.parse(saved) : "rgb(255, 140, 0)"
   })
   const [bgcolor, setBgcolor] = useState(() => {
     const saved = localStorage.getItem('bgcolor')
@@ -136,6 +136,7 @@ function App() {
     const saved = localStorage.getItem('BSOBorderColor')
     return saved ? JSON.parse(saved) : "white"
   })
+  const hintcolor = "rgb(216, 216, 216)";
   const [awayUsed, setAwayUsed] = useState(() => {
     const saved = localStorage.getItem('awayUsed')
     return saved ? JSON.parse(saved) : 0
@@ -339,8 +340,8 @@ function App() {
       </div>
 
       <div className="panel">
-        <ControlUsed used={awayUsed} setUsed={setAwayUsed} topOrBottom="top" />
-        <ControlUsed used={homeUsed} setUsed={setHomeUsed} topOrBottom="bottom" />
+        <ControlUsed used={awayUsed} setUsed={setAwayUsed} tob="top" topOrBottom={topOrBottom} hintcolor={hintcolor} />
+        <ControlUsed used={homeUsed} setUsed={setHomeUsed} tob="bottom" topOrBottom={topOrBottom} hintcolor={hintcolor} />
         <ControlBSO BSO={BSO} setBSO={setBSO} />
 
         <ControlBase
@@ -358,6 +359,8 @@ function App() {
           homeCurrentBatOrder={homeCurrentBatOrder}
           setAwayCurrentBatOrder={setAwayCurrentBatOrder}
           setHomeCurrentBatOrder={setHomeCurrentBatOrder}
+          topOrBottom={topOrBottom}
+          hintcolor={hintcolor}
         />
 
         <ControlScoreBoard 
@@ -379,6 +382,7 @@ function App() {
           setTopOrBottom={setTopOrBottom}
           away={away}
           home={home}
+          hintcolor={hintcolor}
         />
 
 
@@ -426,7 +430,7 @@ function App() {
           setScoreBoardColor={setScoreBoardColor}
         />
 
-        <ControlImage1 image1={image1} setImage1={setImage1}/>
+        {/* <ControlImage1 image1={image1} setImage1={setImage1}/> */}
 
         <Reset />
 
