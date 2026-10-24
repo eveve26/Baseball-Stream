@@ -17,7 +17,7 @@ import { ControlBSO } from './controling/BSO'
 import { ControlColor } from './controling/colors'
 import { ControlCurrentBatter } from './controling/currentBatter'
 import { ControlUsed } from './controling/used'
-import { ControlImage1 } from './controling/image1'
+// import { ControlImage1 } from './controling/image1'
 import { ShowUsed } from './controling/showUsed'
 
 function App() {
@@ -149,10 +149,10 @@ function App() {
     const saved = localStorage.getItem('showUsed')
     return saved ? JSON.parse(saved) : true
   })
-  const [image1, setImage1] = useState(() => {
-    const saved = localStorage.getItem('image1')
-    return saved ? JSON.parse(saved) : ".\\images\\image1.jpg"
-  })
+  // const [image1, setImage1] = useState(() => {
+  //   const saved = localStorage.getItem('image1')
+  //   return saved ? JSON.parse(saved) : ".\\images\\image1.jpg"
+  // })
 
   useEffect(() => {
     localStorage.setItem('away', JSON.stringify(away))
@@ -247,9 +247,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem('homeUsed', JSON.stringify(homeUsed))
   }, [homeUsed])
-  useEffect(() => {
-    localStorage.setItem('image1', JSON.stringify(image1))
-  }, [image1])
+  // useEffect(() => {
+  //   localStorage.setItem('image1', JSON.stringify(image1))
+  // }, [image1])
 
   return (
     <>
