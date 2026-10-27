@@ -8,9 +8,13 @@ const { MongoStore } = require("connect-mongo");
 const authRoutes = require("./routes/auth");
 const cors = require("cors");
 const app = express();
+const allowedOrigins = [
+    "https://eveve26.github.io",
+    "http://localhost:5173",
+];
 app.set("trust proxy", 1);
 app.use(cors({
-    origin: "https://eveve26.github.io",
+    origin: allowedOrigins,
     credentials: true,
 }));
 // const addUser = require("./addUser");

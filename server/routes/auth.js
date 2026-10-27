@@ -3,6 +3,25 @@ const bcrypt = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
 
+router.get("/me", async (req, res) => {
+    if (!req.session.userId) {
+        return res.status(401).json({ message: "Not logged in." });
+    }
+
+    try {
+        const user = await User.findById(req.session.userId)
+            .select("_id username");
+
+        if (!user) {
+            return res.status(401).json({ message: "Not logged in." });
+        }
+
+        res.json({ user });
+    } catch {
+        res.status(500).json({ message: "Server error." });
+    }
+});
+
 router.post("/login", async (req, res) => {
 
     const { username, password } = req.body ?? {};
