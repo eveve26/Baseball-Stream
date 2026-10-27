@@ -3,6 +3,10 @@ import { Batter } from './displayed/player'
 import { scores, batters, pitcher } from './displayed/startstate'
 
 export function AllUseStates() {
+    const [loginStatus, setLoginStatus] = useState(() => {
+    const saved = localStorage.getItem('loginStatus')
+    return saved ? JSON.parse(saved) : false
+    })
     const [away, setAway] = useState(() => {
     const saved = localStorage.getItem('away')
     return saved ? JSON.parse(saved) : "G"
@@ -242,11 +246,15 @@ export function AllUseStates() {
     useEffect(() => {
         localStorage.setItem('showTime', JSON.stringify(showTime))
     }, [showTime])
+    useEffect(() => {
+        localStorage.setItem('loginStatus', JSON.stringify(loginStatus))
+    }, [loginStatus])
     // useEffect(() => {
     //   localStorage.setItem('image1', JSON.stringify(image1))
     // }, [image1])
 
     return {
+    loginStatus, setLoginStatus,
     away, setAway,
     home, setHome,
     innings, setInnings,

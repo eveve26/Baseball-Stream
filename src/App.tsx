@@ -19,9 +19,11 @@ import { ControlUsed } from './controling/used'
 import { ShowUsed } from './controling/showUsed'
 import { Time } from './displayed/time'
 import { ShowTime } from './controling/showTime'
+import { Login } from './login/login'
 
 function App() {
   const {
+    loginStatus, setLoginStatus,
     away, setAway,
     home, setHome,
     innings, setInnings,
@@ -65,7 +67,8 @@ function App() {
   return (
   <>
 
-
+    {!loginStatus && <Login setLoginStatus={setLoginStatus} />}
+    {loginStatus && (
     <div className="panels">
       <div className="panel" id="left-panel" style={{ backgroundColor: bgcolor, color: textColor }}>
 
@@ -253,7 +256,7 @@ function App() {
       </div>
     </div>
       
-      
+    )}
   </>
   )
 }
