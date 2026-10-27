@@ -20,6 +20,8 @@ import { ShowUsed } from './controling/showUsed'
 import { Time } from './displayed/time'
 import { ShowTime } from './controling/showTime'
 import { Login } from './login/login'
+import { Running } from './displayed/running'
+import { ShowRunning } from './controling/showRunning'
 
 function App() {
   const {
@@ -58,6 +60,7 @@ function App() {
     homeUsed, setHomeUsed,
     showUsed, setShowUsed,
     showTime, setShowTime,
+    showRunning, setShowRunning,
     // image1, setImage1,
   } = AllUseStates()
 
@@ -71,8 +74,7 @@ function App() {
     {loginStatus && (
     <div className="panels">
       <div className="panel" id="left-panel" style={{ backgroundColor: bgcolor, color: textColor }}>
-
-          {/* <img src={image1} className="image1" alt=""/> */}
+        {showRunning && <Running />}
 
         <div className="grid-container-1">
           <div className="grid-item-1-1">
@@ -228,6 +230,7 @@ function App() {
         />
         <ShowUsed showUsed={showUsed} setShowUsed={setShowUsed}/>
         <ShowTime showTime={showTime} setShowTime={setShowTime}/>
+        <ShowRunning showRunning={showRunning} setShowRunning={setShowRunning}/>
         <ControlColor
           color1={color1}
           color2={color2}

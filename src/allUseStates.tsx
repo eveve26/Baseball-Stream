@@ -142,6 +142,10 @@ export function AllUseStates() {
     const saved = localStorage.getItem('showTime')
     return saved ? JSON.parse(saved) : true
     })
+    const [showRunning, setShowRunning] = useState(() => {
+    const saved = localStorage.getItem('showRunning')
+    return saved ? JSON.parse(saved) : false
+    })
     // const [image1, setImage1] = useState(() => {
     //   const saved = localStorage.getItem('image1')
     //   return saved ? JSON.parse(saved) : ".\\images\\image1.jpg"
@@ -249,6 +253,9 @@ export function AllUseStates() {
     useEffect(() => {
         localStorage.setItem('loginStatus', JSON.stringify(loginStatus))
     }, [loginStatus])
+    useEffect(() => {
+        localStorage.setItem('showRunning', JSON.stringify(showRunning))
+    }, [showRunning])
     // useEffect(() => {
     //   localStorage.setItem('image1', JSON.stringify(image1))
     // }, [image1])
@@ -289,6 +296,7 @@ export function AllUseStates() {
     homeUsed, setHomeUsed,
     showUsed, setShowUsed,
     showTime, setShowTime,
+    showRunning, setShowRunning,
     // image1, setImage1,
     }
 }
