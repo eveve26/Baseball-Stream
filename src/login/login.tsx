@@ -11,7 +11,7 @@ export function Login({ setLoginStatus }: { setLoginStatus: React.Dispatch<React
         // console.log("Logging in with", { username, password });
 
         try {
-            const response = await fetch("/api/auth/login", {
+            const response = await fetch("https://baseball-stream.onrender.com/api/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
