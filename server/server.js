@@ -6,9 +6,13 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const { MongoStore } = require("connect-mongo");
 const authRoutes = require("./routes/auth");
-
+const cors = require("cors");
 const app = express();
-
+app.set("trust proxy", 1);
+app.use(cors({
+    origin: "https://eveve26.github.io",
+    credentials: true,
+}));
 // const addUser = require("./addUser");
 
 app.use(
@@ -21,7 +25,7 @@ app.use(
         }),
         cookie: {
             httpOnly: true,
-            sameSite: "lax",
+            sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
             secure: process.env.NODE_ENV === "production",
             maxAge: 1000 * 60 * 60 * 24,
         },
