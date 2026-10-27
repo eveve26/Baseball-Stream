@@ -20,8 +20,10 @@ export function Login({ setLoginStatus }: { setLoginStatus: React.Dispatch<React
                 body: JSON.stringify({ username, password }),
             });
 
+            const data = await response.json();
+
             if (!response.ok) {
-                setError("請確認帳號密碼");
+                setError(`${response.status}: ${data.message || "登入失敗"}`);
                 return;
             }
 
