@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import './login.css'
 
 export function Login({ setLoginStatus }: { setLoginStatus: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [username, setUsername] = useState("");
@@ -35,20 +35,20 @@ export function Login({ setLoginStatus }: { setLoginStatus: React.Dispatch<React
         };
 
     return (
-        <div>
-            <input
+        <div className="login-container">
+            <input className="login-input"
                 type="text"
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
             />
-            <input
+            <input className="login-input"
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={handleLogin}>Login</button>
+            <button onClick={handleLogin} className="login-button">Login</button>
             {error && <p role="alert">{error}</p>}
         </div>
     );
