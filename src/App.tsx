@@ -26,6 +26,7 @@ import { ShowRunning } from './controling/showRunning'
 function App() {
   const {
     loginStatus, setLoginStatus,
+    checkingLogin,
     away, setAway,
     home, setHome,
     innings, setInnings,
@@ -70,8 +71,11 @@ function App() {
   return (
   <>
 
-    {!loginStatus && <Login setLoginStatus={setLoginStatus} />}
-    {loginStatus && (
+     {checkingLogin ? (
+      <p>Checking login...</p>
+    ) : !loginStatus ? (
+      <Login setLoginStatus={setLoginStatus} />
+    ) : (
     <div className="panels">
       <div className="panel" id="left-panel" style={{ backgroundColor: bgcolor, color: textColor }}>
         {showRunning && <Running />}

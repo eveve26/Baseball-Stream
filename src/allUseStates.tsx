@@ -3,10 +3,8 @@ import { Batter } from './displayed/player'
 import { scores, batters, pitcher } from './displayed/startstate'
 
 export function AllUseStates() {
-    const [loginStatus, setLoginStatus] = useState(() => {
-    const saved = localStorage.getItem('loginStatus')
-    return saved ? JSON.parse(saved) : false
-    })
+    const [loginStatus, setLoginStatus] = useState(false);
+    const [checkingLogin, setCheckingLogin] = useState(true);
     const [away, setAway] = useState(() => {
     const saved = localStorage.getItem('away')
     return saved ? JSON.parse(saved) : "G"
@@ -251,8 +249,24 @@ export function AllUseStates() {
         localStorage.setItem('showTime', JSON.stringify(showTime))
     }, [showTime])
     useEffect(() => {
-        localStorage.setItem('loginStatus', JSON.stringify(loginStatus))
-    }, [loginStatus])
+    async function checkLogin() {
+        try {
+            const response = await fetch(
+                "https://baseball-stream.onrender.com/api/auth/me",
+                // "http://localhost:3000/api/auth/me",
+                { credentials: "include" }
+            );
+
+            setLoginStatus(response.ok);
+        } catch {
+            setLoginStatus(false);
+        } finally {
+            setCheckingLogin(false);
+        }
+    }
+
+        checkLogin();
+    }, []);
     useEffect(() => {
         localStorage.setItem('showRunning', JSON.stringify(showRunning))
     }, [showRunning])
@@ -262,6 +276,7 @@ export function AllUseStates() {
 
     return {
     loginStatus, setLoginStatus,
+    checkingLogin, setCheckingLogin,
     away, setAway,
     home, setHome,
     innings, setInnings,
