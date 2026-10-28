@@ -2,12 +2,9 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const express = require("express");
 const router = express.Router();
+const requireLogin = require("../middleware/requireLogin");
 
-router.get("/me", async (req, res) => {
-    if (!req.session.userId) {
-        return res.status(401).json({ message: "Not logged in." });
-    }
-
+router.get("/me", requireLogin, async (req, res) => {
     try {
         const user = await User.findById(req.session.userId)
             .select("_id username");
