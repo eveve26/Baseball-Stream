@@ -95,3 +95,8 @@
   max-height: 350px;
   object-fit: contain;
 }
+
+.check-container {
+  margin-top: 100px;
+  align-items: center;
+}

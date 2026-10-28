@@ -72,10 +72,10 @@ function App() {
   <>
 
      {checkingLogin ? (
-      <>
-        <p>Checking login...</p>
+      <div className="check-container">
+        <p>全力奔跑...</p>
         <Running />
-      </>
+      </div>
     ) : !loginStatus ? (
       <Login setLoginStatus={setLoginStatus} />
     ) : (
