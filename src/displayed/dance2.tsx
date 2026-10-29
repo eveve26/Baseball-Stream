@@ -4,11 +4,8 @@ import frame1 from '../assets/Dance2/frame1.png'
 import frame2 from '../assets/Dance2/frame2.png'
 import frame3 from '../assets/Dance2/frame3.png'
 import frame4 from '../assets/Dance2/frame4.png'
-import frame5 from '../assets/Dance2/frame3.png'
-import frame6 from '../assets/Dance2/frame2.png'
 
-
-const frames = [frame1, frame2, frame3, frame4, frame5, frame6];
+const frames = [frame1, frame2, frame3, frame4, frame3, frame2];
 
 export function Dance2() {
     const [frameIndex, setFrameIndex] = useState(0);
