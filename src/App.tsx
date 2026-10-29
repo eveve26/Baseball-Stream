@@ -22,6 +22,10 @@ import { ShowTime } from './controling/showTime'
 import { Login } from './login/login'
 import { Running } from './displayed/running'
 import { ShowRunning } from './controling/showRunning'
+import { ShowHomeRun } from './controling/showHomeRun'
+
+import { Dance1 } from './displayed/dance1'
+import { Dance2 } from './displayed/dance2'
 
 function App() {
   const {
@@ -62,6 +66,7 @@ function App() {
     showUsed, setShowUsed,
     showTime, setShowTime,
     showRunning, setShowRunning,
+    showHomeRun, setShowHomeRun,
     // image1, setImage1,
   } = AllUseStates()
 
@@ -81,7 +86,10 @@ function App() {
     ) : (
     <div className="panels">
       <div className="panel" id="left-panel" style={{ backgroundColor: bgcolor, color: textColor }}>
-        {showRunning && <Running />}
+        {/* {showRunning && <Running />} */}
+        {/* <Dance1 />
+        <Dance2 /> */}
+
 
         <div className="grid-container-1">
           <div className="grid-item-1-1">
@@ -159,8 +167,24 @@ function App() {
             />    
           </div>
         </div>
-            
-        
+
+      {showRunning &&   
+        <div className="overlay">
+          <Dance1 /><Dance1 />
+          <p className="overlay-text">得</p>
+          <Running />
+          <p className="overlay-text">分</p>
+          <Dance1 /><Dance1 />    
+        </div>
+      }
+      {showHomeRun &&
+      <div className="overlay">
+        <Dance2 /><Dance2 />
+        <p className="overlay-text">全壘打!!!!!</p>
+        <Dance2 /><Dance2 />
+      </div>      
+      }
+
         
       </div>
 
@@ -238,6 +262,7 @@ function App() {
         <ShowUsed showUsed={showUsed} setShowUsed={setShowUsed}/>
         <ShowTime showTime={showTime} setShowTime={setShowTime}/>
         <ShowRunning showRunning={showRunning} setShowRunning={setShowRunning}/>
+        <ShowHomeRun showHomeRun={showHomeRun} setShowHomeRun={setShowHomeRun}/>
         <ControlColor
           color1={color1}
           color2={color2}

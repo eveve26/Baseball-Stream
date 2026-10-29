@@ -4,7 +4,7 @@ export function ShowRunning({ showRunning, setShowRunning }: { showRunning: bool
     return (
         <div className="control-row">
             <div>
-                <label>顯示跑步:</label>
+                <label>得分動畫:</label>
                 <input type="checkbox" checked={showRunning} onChange={(e) => setShowRunning(e.target.checked)} className="control-input"/>
             </div>
         </div>

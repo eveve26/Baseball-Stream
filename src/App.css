@@ -31,6 +31,7 @@
   color: white;
   padding: 40px;
   font-family: "GenSen", sans-serif;
+  position: relative;
 }
 
 .panels {
@@ -99,4 +100,29 @@
 .check-container {
   margin-top: 100px;
   align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.overlay-text {
+  font-size: 68px;
+  padding: 20px;
+  -webkit-text-stroke: 2px rgb(255, 80, 0);
 }
