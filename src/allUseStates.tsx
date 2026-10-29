@@ -89,39 +89,39 @@ export function AllUseStates() {
     })
     const [color1, setColor1] = useState(() => {
     const saved = localStorage.getItem('color1')
-    return saved ? JSON.parse(saved) : "rgb(255, 192, 203)"
+    return saved ? JSON.parse(saved) : "#ffc0cb"
     })
     const [color2, setColor2] = useState(() => {
     const saved = localStorage.getItem('color2')
-    return saved ? JSON.parse(saved) : "rgb(255, 140, 0)"
+    return saved ? JSON.parse(saved) : "#ff8c00"
     })
     const [bgcolor, setBgcolor] = useState(() => {
     const saved = localStorage.getItem('bgcolor')
-    return saved ? JSON.parse(saved) : "rgb(51, 41, 37)"
+    return saved ? JSON.parse(saved) : "#332925"
     })
     const [baseBorderColor, setBaseBorderColor] = useState(() => {
     const saved = localStorage.getItem('baseBorderColor')
-    return saved ? JSON.parse(saved) : "white"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const [textColor, setTextColor] = useState(() => {
     const saved = localStorage.getItem('textColor')
-    return saved ? JSON.parse(saved) : "white"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const [bigScoreColor, setBigScoreColor] = useState(() => {
     const saved = localStorage.getItem('bigScoreColor')
-    return saved ? JSON.parse(saved) : "white"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const [scoreBoardColor, setScoreBoardColor] = useState(() => {
     const saved = localStorage.getItem('scoreBoardColor')
-    return saved ? JSON.parse(saved) : "white"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const [BSOBorderColor, setBSOBorderColor] = useState(() => {
     const saved = localStorage.getItem('BSOBorderColor')
-    return saved ? JSON.parse(saved) : "white"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const [timecolor, setTimecolor] = useState(() => {
     const saved = localStorage.getItem('timecolor')
-    return saved ? JSON.parse(saved) : "black"
+    return saved ? JSON.parse(saved) : "#ffffff"
     })
     const hintcolor = "rgb(216, 216, 216)";
     const [awayUsed, setAwayUsed] = useState(() => {
