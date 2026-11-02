@@ -10,7 +10,7 @@ const cors = require("cors");
 const app = express();
 const allowedOrigins = [
     "https://eveve26.github.io",
-    "http://localhost:5173",
+    // "http://localhost:5173",
 ];
 app.set("trust proxy", 1);
 app.use(cors({

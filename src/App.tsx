@@ -23,9 +23,12 @@ import { Login } from './login/login'
 import { Running } from './displayed/running'
 import { ShowRunning } from './controling/showRunning'
 import { ShowHomeRun } from './controling/showHomeRun'
+import { ShowWinning } from './controling/showWinning'
 
 import { Dance1 } from './displayed/dance1'
 import { Dance2 } from './displayed/dance2'
+import { Winning } from './displayed/winning'
+
 
 function App() {
   const {
@@ -67,6 +70,7 @@ function App() {
     showTime, setShowTime,
     showRunning, setShowRunning,
     showHomeRun, setShowHomeRun,
+    showWinning, setShowWinning,
     // image1, setImage1,
   } = AllUseStates()
 
@@ -170,18 +174,37 @@ function App() {
 
       {showRunning &&   
         <div className="overlay">
-          <Dance1 /><Dance1 />
-          <p className="overlay-text">得</p>
-          <Running />
-          <p className="overlay-text">分</p>
-          <Dance1 /><Dance1 />    
+          <div className="overlay-row">
+            <p className="overlay-text">得</p>
+            <Running />
+            <p className="overlay-text">分</p>
+          </div>
+          <div className="overlay-row">
+            <Dance1 /><Dance1 />
+            <Dance1 /><Dance1 /> 
+          </div>
         </div>
       }
       {showHomeRun &&
       <div className="overlay">
-        <Dance2 /><Dance2 />
-        <p className="overlay-text">全壘打!!!!!</p>
-        <Dance2 /><Dance2 />
+        <div className="overlay-row">
+          <p className="overlay-text">全壘打!!!!!</p>
+        </div>
+        <div className="overlay-row">
+          <Dance2 /><Dance2 />
+          <Dance2 /><Dance2 />
+        </div>  
+      </div>      
+      }
+      {showWinning &&
+      <div className="overlay" style={{ backgroundColor: "rgba(29, 188, 26, 0.5)" }}>
+        <div className="overlay-row">
+          <p className="overlay-text">各位隊友!我們贏啦!</p>
+        </div>
+        <div className="overlay-row">
+          <Winning /><Winning />
+          <Winning /><Winning />
+        </div>
       </div>      
       }
 
@@ -263,6 +286,7 @@ function App() {
         <ShowTime showTime={showTime} setShowTime={setShowTime}/>
         <ShowRunning showRunning={showRunning} setShowRunning={setShowRunning}/>
         <ShowHomeRun showHomeRun={showHomeRun} setShowHomeRun={setShowHomeRun}/>
+        <ShowWinning showWinning={showWinning} setShowWinning={setShowWinning}/>
         <ControlColor
           color1={color1}
           color2={color2}
